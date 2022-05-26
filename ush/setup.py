@@ -1839,7 +1839,11 @@ def setup():
         #-----------------------------------------------------------------------
         #-----------------------------------------------------------------------
         #
+        """
+    with open(GLOBAL_VAR_DEFNS_FP,'a') as f:
+        f.write(dedent(msg))
         
+    settings = {
         #
         #-----------------------------------------------------------------------
         #
@@ -1849,9 +1853,9 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        WFLOW_LAUNCH_SCRIPT_FP='{WFLOW_LAUNCH_SCRIPT_FP}'
-        WFLOW_LAUNCH_LOG_FP='{WFLOW_LAUNCH_LOG_FP}'
-        CRONTAB_LINE='{CRONTAB_LINE}'
+        'WFLOW_LAUNCH_SCRIPT_FP': WFLOW_LAUNCH_SCRIPT_FP,
+        'WFLOW_LAUNCH_LOG_FP': WFLOW_LAUNCH_LOG_FP,
+        'CRONTAB_LINE': CRONTAB_LINE,
         #
         #-----------------------------------------------------------------------
         #
@@ -1859,44 +1863,44 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        SR_WX_APP_TOP_DIR='{SR_WX_APP_TOP_DIR}'
-        HOMErrfs='{HOMErrfs}'
-        USHDIR='{USHDIR}'
-        SCRIPTSDIR='{SCRIPTSDIR}'
-        JOBSDIR='{JOBSDIR}'
-        SORCDIR='{SORCDIR}'
-        SRC_DIR='{SRC_DIR}'
-        PARMDIR='{PARMDIR}'
-        MODULES_DIR='{MODULES_DIR}'
-        EXECDIR='{EXECDIR}'
-        FIXam='{FIXam}'
-        FIXclim='{FIXclim}'
-        FIXLAM='{FIXLAM}'
-        FIXgsm='{FIXgsm}'
-        FIXaer='{FIXaer}'
-        FIXlut='{FIXlut}'
-        COMROOT='{COMROOT}'
-        COMOUT_BASEDIR='{COMOUT_BASEDIR}'
-        TEMPLATE_DIR='{TEMPLATE_DIR}'
-        VX_CONFIG_DIR='{VX_CONFIG_DIR}'
-        METPLUS_CONF='{METPLUS_CONF}'
-        MET_CONFIG='{MET_CONFIG}'
-        UFS_WTHR_MDL_DIR='{UFS_WTHR_MDL_DIR}'
-        UFS_UTILS_DIR='{UFS_UTILS_DIR}'
-        SFC_CLIMO_INPUT_DIR='{SFC_CLIMO_INPUT_DIR}'
-        TOPO_DIR='{TOPO_DIR}'
-        UPP_DIR='{UPP_DIR}'
+        'SR_WX_APP_TOP_DIR': SR_WX_APP_TOP_DIR,
+        'HOMErrfs': HOMErrfs,
+        'USHDIR': USHDIR,
+        'SCRIPTSDIR': SCRIPTSDIR,
+        'JOBSDIR': JOBSDIR,
+        'SORCDIR': SORCDIR,
+        'SRC_DIR': SRC_DIR,
+        'PARMDIR': PARMDIR,
+        'MODULES_DIR': MODULES_DIR,
+        'EXECDIR': EXECDIR,
+        'FIXam': FIXam,
+        'FIXclim': FIXclim,
+        'FIXLAM': FIXLAM,
+        'FIXgsm': FIXgsm,
+        'FIXaer': FIXaer,
+        'FIXlut': FIXlut,
+        'COMROOT': COMROOT,
+        'COMOUT_BASEDIR': COMOUT_BASEDIR,
+        'TEMPLATE_DIR': TEMPLATE_DIR,
+        'VX_CONFIG_DIR': VX_CONFIG_DIR,
+        'METPLUS_CONF': METPLUS_CONF,
+        'MET_CONFIG': MET_CONFIG,
+        'UFS_WTHR_MDL_DIR': UFS_WTHR_MDL_DIR,
+        'UFS_UTILS_DIR': UFS_UTILS_DIR,
+        'SFC_CLIMO_INPUT_DIR': SFC_CLIMO_INPUT_DIR,
+        'TOPO_DIR': TOPO_DIR,
+        'UPP_DIR': UPP_DIR,
         
-        EXPTDIR='{EXPTDIR}'
-        LOGDIR='{LOGDIR}'
-        CYCLE_BASEDIR='{CYCLE_BASEDIR}'
-        GRID_DIR='{GRID_DIR}'
-        OROG_DIR='{OROG_DIR}'
-        SFC_CLIMO_DIR='{SFC_CLIMO_DIR}'
+        'EXPTDIR': EXPTDIR,
+        'LOGDIR': LOGDIR,
+        'CYCLE_BASEDIR': CYCLE_BASEDIR,
+        'GRID_DIR': GRID_DIR,
+        'OROG_DIR': OROG_DIR,
+        'SFC_CLIMO_DIR': SFC_CLIMO_DIR,
         
-        NDIGITS_ENSMEM_NAMES='{NDIGITS_ENSMEM_NAMES}'
-        ENSMEM_NAMES={list_to_str(ENSMEM_NAMES)}
-        FV3_NML_ENSMEM_FPS={list_to_str(FV3_NML_ENSMEM_FPS)}
+        'NDIGITS_ENSMEM_NAMES': NDIGITS_ENSMEM_NAMES,
+        'ENSMEM_NAMES': ENSMEM_NAMES,
+        'FV3_NML_ENSMEM_FPS': FV3_NML_ENSMEM_FPS,
         #
         #-----------------------------------------------------------------------
         #
@@ -1904,49 +1908,49 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        GLOBAL_VAR_DEFNS_FP='{GLOBAL_VAR_DEFNS_FP}'
+        'GLOBAL_VAR_DEFNS_FP': GLOBAL_VAR_DEFNS_FP,
         
-        DATA_TABLE_FN='{DATA_TABLE_FN}'
-        DIAG_TABLE_FN='{DIAG_TABLE_FN}'
-        FIELD_TABLE_FN='{FIELD_TABLE_FN}'
-        MODEL_CONFIG_FN='{MODEL_CONFIG_FN}'
-        NEMS_CONFIG_FN='{NEMS_CONFIG_FN}'
+        'DATA_TABLE_FN': DATA_TABLE_FN,
+        'DIAG_TABLE_FN': DIAG_TABLE_FN,
+        'FIELD_TABLE_FN': FIELD_TABLE_FN,
+        'MODEL_CONFIG_FN': MODEL_CONFIG_FN,
+        'NEMS_CONFIG_FN': NEMS_CONFIG_FN,
 
-        DATA_TABLE_TMPL_FN='{DATA_TABLE_TMPL_FN}'
-        DIAG_TABLE_TMPL_FN='{DIAG_TABLE_TMPL_FN}'
-        FIELD_TABLE_TMPL_FN='{FIELD_TABLE_TMPL_FN}'
-        MODEL_CONFIG_TMPL_FN='{MODEL_CONFIG_TMPL_FN}'
-        NEMS_CONFIG_TMPL_FN='{NEMS_CONFIG_TMPL_FN}'
+        'DATA_TABLE_TMPL_FN': DATA_TABLE_TMPL_FN,
+        'DIAG_TABLE_TMPL_FN': DIAG_TABLE_TMPL_FN,
+        'FIELD_TABLE_TMPL_FN': FIELD_TABLE_TMPL_FN,
+        'MODEL_CONFIG_TMPL_FN': MODEL_CONFIG_TMPL_FN,
+        'NEMS_CONFIG_TMPL_FN': NEMS_CONFIG_TMPL_FN,
         
-        DATA_TABLE_TMPL_FP='{DATA_TABLE_TMPL_FP}'
-        DIAG_TABLE_TMPL_FP='{DIAG_TABLE_TMPL_FP}'
-        FIELD_TABLE_TMPL_FP='{FIELD_TABLE_TMPL_FP}'
-        FV3_NML_BASE_SUITE_FP='{FV3_NML_BASE_SUITE_FP}'
-        FV3_NML_YAML_CONFIG_FP='{FV3_NML_YAML_CONFIG_FP}'
-        FV3_NML_BASE_ENS_FP='{FV3_NML_BASE_ENS_FP}'
-        MODEL_CONFIG_TMPL_FP='{MODEL_CONFIG_TMPL_FP}'
-        NEMS_CONFIG_TMPL_FP='{NEMS_CONFIG_TMPL_FP}'
+        'DATA_TABLE_TMPL_FP': DATA_TABLE_TMPL_FP,
+        'DIAG_TABLE_TMPL_FP': DIAG_TABLE_TMPL_FP,
+        'FIELD_TABLE_TMPL_FP': FIELD_TABLE_TMPL_FP,
+        'FV3_NML_BASE_SUITE_FP': FV3_NML_BASE_SUITE_FP,
+        'FV3_NML_YAML_CONFIG_FP': FV3_NML_YAML_CONFIG_FP,
+        'FV3_NML_BASE_ENS_FP': FV3_NML_BASE_ENS_FP,
+        'MODEL_CONFIG_TMPL_FP': MODEL_CONFIG_TMPL_FP,
+        'NEMS_CONFIG_TMPL_FP': NEMS_CONFIG_TMPL_FP,
         
-        CCPP_PHYS_SUITE_FN='{CCPP_PHYS_SUITE_FN}'
-        CCPP_PHYS_SUITE_IN_CCPP_FP='{CCPP_PHYS_SUITE_IN_CCPP_FP}'
-        CCPP_PHYS_SUITE_FP='{CCPP_PHYS_SUITE_FP}'
+        'CCPP_PHYS_SUITE_FN': CCPP_PHYS_SUITE_FN,
+        'CCPP_PHYS_SUITE_IN_CCPP_FP': CCPP_PHYS_SUITE_IN_CCPP_FP,
+        'CCPP_PHYS_SUITE_FP': CCPP_PHYS_SUITE_FP,
         
-        FIELD_DICT_FN='{FIELD_DICT_FN}'
-        FIELD_DICT_IN_UWM_FP='{FIELD_DICT_IN_UWM_FP}'
-        FIELD_DICT_FP='{FIELD_DICT_FP}'
+        'FIELD_DICT_FN': FIELD_DICT_FN,
+        'FIELD_DICT_IN_UWM_FP': FIELD_DICT_IN_UWM_FP,
+        'FIELD_DICT_FP': FIELD_DICT_FP,
         
-        DATA_TABLE_FP='{DATA_TABLE_FP}'
-        FIELD_TABLE_FP='{FIELD_TABLE_FP}'
-        FV3_NML_FN='{FV3_NML_FN}'   # This may not be necessary...
-        FV3_NML_FP='{FV3_NML_FP}'
-        NEMS_CONFIG_FP='{NEMS_CONFIG_FP}'
+        'DATA_TABLE_FP': DATA_TABLE_FP,
+        'FIELD_TABLE_FP': FIELD_TABLE_FP,
+        'FV3_NML_FN': FV3_NML_FN,   # This may not be necessary...
+        'FV3_NML_FP': FV3_NML_FP,
+        'NEMS_CONFIG_FP': NEMS_CONFIG_FP,
         
-        FV3_EXEC_FP='{FV3_EXEC_FP}'
+        'FV3_EXEC_FP': FV3_EXEC_FP,
         
-        LOAD_MODULES_RUN_TASK_FP='{LOAD_MODULES_RUN_TASK_FP}'
+        'LOAD_MODULES_RUN_TASK_FP': LOAD_MODULES_RUN_TASK_FP,
         
-        THOMPSON_MP_CLIMO_FN='{THOMPSON_MP_CLIMO_FN}'
-        THOMPSON_MP_CLIMO_FP='{THOMPSON_MP_CLIMO_FP}'
+        'THOMPSON_MP_CLIMO_FN': THOMPSON_MP_CLIMO_FN,
+        'THOMPSON_MP_CLIMO_FP': THOMPSON_MP_CLIMO_FP,
         #
         #-----------------------------------------------------------------------
         #
@@ -1954,7 +1958,7 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        RELATIVE_LINK_FLAG='{RELATIVE_LINK_FLAG}'
+        'RELATIVE_LINK_FLAG': RELATIVE_LINK_FLAG,
         #
         #-----------------------------------------------------------------------
         #
@@ -1963,8 +1967,8 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        SDF_USES_RUC_LSM='{type_to_str(SDF_USES_RUC_LSM)}'
-        SDF_USES_THOMPSON_MP='{type_to_str(SDF_USES_THOMPSON_MP)}'
+        'SDF_USES_RUC_LSM': SDF_USES_RUC_LSM,
+        'SDF_USES_THOMPSON_MP': SDF_USES_THOMPSON_MP,
         #
         #-----------------------------------------------------------------------
         #
@@ -1973,28 +1977,29 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        GTYPE='{GTYPE}'
-        TILE_RGNL='{TILE_RGNL}'
-        NH0='{NH0}'
-        NH3='{NH3}'
-        NH4='{NH4}'
+        'GTYPE': GTYPE,
+        'TILE_RGNL': TILE_RGNL,
+        'NH0': NH0,
+        'NH3': NH3,
+        'NH4': NH4,
         
-        LON_CTR='{LON_CTR}'
-        LAT_CTR='{LAT_CTR}'
-        NX='{NX}'
-        NY='{NY}'
-        NHW='{NHW}'
-        STRETCH_FAC='{STRETCH_FAC}'
+        'LON_CTR': LON_CTR,
+        'LAT_CTR': LAT_CTR,
+        'NX': NX,
+        'NY': NY,
+        'NHW': NHW,
+        'STRETCH_FAC': STRETCH_FAC,
         
-        RES_IN_FIXLAM_FILENAMES='{RES_IN_FIXLAM_FILENAMES}'
+        'RES_IN_FIXLAM_FILENAMES': RES_IN_FIXLAM_FILENAMES,
         #
         # If running the make_grid task, CRES will be set to a null string during
         # the grid generation step.  It will later be set to an actual value after
         # the make_grid task is complete.
         #
-        CRES='{CRES}'"""
+        'CRES': CRES
+    }
     with open(GLOBAL_VAR_DEFNS_FP,'a') as f:
-        f.write(dedent(msg))
+        f.write(cfg_to_shell_str(settings))
     #
     #-----------------------------------------------------------------------
     #
@@ -2005,7 +2010,7 @@ def setup():
     #
     if GRID_GEN_METHOD == "GFDLgrid":
     
-      msg=f"""
+        msg=f"""
         #
         #-----------------------------------------------------------------------
         #
@@ -2019,16 +2024,22 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        ISTART_OF_RGNL_DOM_WITH_WIDE_HALO_ON_T6SG='{ISTART_OF_RGNL_DOM_WITH_WIDE_HALO_ON_T6SG}'
-        IEND_OF_RGNL_DOM_WITH_WIDE_HALO_ON_T6SG='{IEND_OF_RGNL_DOM_WITH_WIDE_HALO_ON_T6SG}'
-        JSTART_OF_RGNL_DOM_WITH_WIDE_HALO_ON_T6SG='{JSTART_OF_RGNL_DOM_WITH_WIDE_HALO_ON_T6SG}'
-        JEND_OF_RGNL_DOM_WITH_WIDE_HALO_ON_T6SG='{JEND_OF_RGNL_DOM_WITH_WIDE_HALO_ON_T6SG}'"""
-      with open(GLOBAL_VAR_DEFNS_FP,'a') as f:
-        f.write(dedent(msg))
+        """
+        with open(GLOBAL_VAR_DEFNS_FP,'a') as f:
+            f.write(dedent(msg))
+
+        settings = {
+           'ISTART_OF_RGNL_DOM_WITH_WIDE_HALO_ON_T6SG': ISTART_OF_RGNL_DOM_WITH_WIDE_HALO_ON_T6SG,
+           'IEND_OF_RGNL_DOM_WITH_WIDE_HALO_ON_T6SG': IEND_OF_RGNL_DOM_WITH_WIDE_HALO_ON_T6SG,
+           'JSTART_OF_RGNL_DOM_WITH_WIDE_HALO_ON_T6SG': JSTART_OF_RGNL_DOM_WITH_WIDE_HALO_ON_T6SG,
+           'JEND_OF_RGNL_DOM_WITH_WIDE_HALO_ON_T6SG': JEND_OF_RGNL_DOM_WITH_WIDE_HALO_ON_T6SG
+        }
+        with open(GLOBAL_VAR_DEFNS_FP,'a') as f:
+            f.write(cfg_to_shell_str(settings))
     
     elif GRID_GEN_METHOD == "ESGgrid":
     
-      msg=f"""
+        msg=f"""
         #
         #-----------------------------------------------------------------------
         #
@@ -2039,13 +2050,19 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        DEL_ANGLE_X_SG='{DEL_ANGLE_X_SG}'
-        DEL_ANGLE_Y_SG='{DEL_ANGLE_Y_SG}'
-        NEG_NX_OF_DOM_WITH_WIDE_HALO='{NEG_NX_OF_DOM_WITH_WIDE_HALO}'
-        NEG_NY_OF_DOM_WITH_WIDE_HALO='{NEG_NY_OF_DOM_WITH_WIDE_HALO}'
-        PAZI='{PAZI or ''}'"""
-      with open(GLOBAL_VAR_DEFNS_FP,'a') as f:
-        f.write(dedent(msg))
+        """
+        with open(GLOBAL_VAR_DEFNS_FP,'a') as f:
+            f.write(dedent(msg))
+
+        settings = {
+            'DEL_ANGLE_X_SG': DEL_ANGLE_X_SG,
+            'DEL_ANGLE_Y_SG': DEL_ANGLE_Y_SG,
+            'NEG_NX_OF_DOM_WITH_WIDE_HALO': NEG_NX_OF_DOM_WITH_WIDE_HALO,
+            'NEG_NY_OF_DOM_WITH_WIDE_HALO': NEG_NY_OF_DOM_WITH_WIDE_HALO,
+            'PAZI': PAZI or ''
+        }
+        with open(GLOBAL_VAR_DEFNS_FP,'a') as f:
+            f.write(cfg_to_shell_str(settings))
     #
     #-----------------------------------------------------------------------
     #
@@ -2054,7 +2071,7 @@ def setup():
     #
     #-----------------------------------------------------------------------
     #
-    msg = f"""
+    settings = {
         #
         #-----------------------------------------------------------------------
         #
@@ -2063,7 +2080,7 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        CPL='{type_to_str(CPL)}'
+        'CPL': CPL,
         #
         #-----------------------------------------------------------------------
         #
@@ -2072,7 +2089,7 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        OZONE_PARAM='{OZONE_PARAM}'
+        'OZONE_PARAM': OZONE_PARAM,
         #
         #-----------------------------------------------------------------------
         #
@@ -2084,7 +2101,7 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        EXTRN_MDL_SYSBASEDIR_ICS='{EXTRN_MDL_SYSBASEDIR_ICS}'
+        'EXTRN_MDL_SYSBASEDIR_ICS': EXTRN_MDL_SYSBASEDIR_ICS,
         #
         #-----------------------------------------------------------------------
         #
@@ -2096,7 +2113,7 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        EXTRN_MDL_SYSBASEDIR_LBCS='{EXTRN_MDL_SYSBASEDIR_LBCS}'
+        'EXTRN_MDL_SYSBASEDIR_LBCS': EXTRN_MDL_SYSBASEDIR_LBCS,
         #
         #-----------------------------------------------------------------------
         #
@@ -2105,7 +2122,7 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        EXTRN_MDL_LBCS_OFFSET_HRS='{EXTRN_MDL_LBCS_OFFSET_HRS}'
+        'EXTRN_MDL_LBCS_OFFSET_HRS': EXTRN_MDL_LBCS_OFFSET_HRS,
         #
         #-----------------------------------------------------------------------
         #
@@ -2114,7 +2131,7 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        LBC_SPEC_FCST_HRS={list_to_str(LBC_SPEC_FCST_HRS)}
+        'LBC_SPEC_FCST_HRS': LBC_SPEC_FCST_HRS,
         #
         #-----------------------------------------------------------------------
         #
@@ -2123,8 +2140,8 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        NUM_CYCLES='{NUM_CYCLES}'
-        ALL_CDATES={list_to_str(ALL_CDATES)}
+        'NUM_CYCLES': NUM_CYCLES,
+        'ALL_CDATES': ALL_CDATES,
         #
         #-----------------------------------------------------------------------
         #
@@ -2138,9 +2155,9 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        USE_FVCOM='{type_to_str(USE_FVCOM)}'
-        FVCOM_DIR='{FVCOM_DIR}'
-        FVCOM_FILE='{FVCOM_FILE}'
+        'USE_FVCOM': USE_FVCOM,
+        'FVCOM_DIR': FVCOM_DIR,
+        'FVCOM_FILE': FVCOM_FILE,
         #
         #-----------------------------------------------------------------------
         #
@@ -2148,8 +2165,8 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        NCORES_PER_NODE='{NCORES_PER_NODE}'
-        PE_MEMBER01='{PE_MEMBER01}'
+        'NCORES_PER_NODE': NCORES_PER_NODE,
+        'PE_MEMBER01': PE_MEMBER01,
         #
         #-----------------------------------------------------------------------
         #
@@ -2162,14 +2179,14 @@ def setup():
         #
         #-----------------------------------------------------------------------
         #
-        N_VAR_SPP='{N_VAR_SPP}'
-        N_VAR_LNDP='{N_VAR_LNDP}'
-        LNDP_TYPE='{LNDP_TYPE}'
-        FHCYC_LSM_SPP_OR_NOT='{FHCYC_LSM_SPP_OR_NOT}'
-        """
+        'N_VAR_SPP': N_VAR_SPP,
+        'N_VAR_LNDP': N_VAR_LNDP,
+        'LNDP_TYPE': LNDP_TYPE,
+        'FHCYC_LSM_SPP_OR_NOT': FHCYC_LSM_SPP_OR_NOT
+    }
 
     with open(GLOBAL_VAR_DEFNS_FP,'a') as f:
-      f.write(dedent(msg))
+        f.write(cfg_to_shell_str(settings))
 
     # export all vars
     export_vars()
