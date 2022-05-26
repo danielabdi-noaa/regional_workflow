@@ -21,6 +21,7 @@ jobs:
       # Run python unittests
       - name: Run python unittests
         run: |
+          sudo ln -sf /bin/bash /bin/sh
           cd ush
           python3 -m unittest -b python_utils/test_python_utils.py
           python3 -m unittest -b *.py

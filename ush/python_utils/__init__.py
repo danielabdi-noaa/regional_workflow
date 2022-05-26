@@ -21,5 +21,5 @@ try:
                              load_ini_config, cfg_to_ini_str, get_ini_value, \
                              load_shell_config, cfg_to_shell_str, \
                              load_config_file
-except:
-  pass
+except ImportError as error:
+    print(error.__class__.__name__ + ": " + str(error))
