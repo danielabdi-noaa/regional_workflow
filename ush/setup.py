@@ -2,15 +2,17 @@
 
 import os
 import sys
+import unittest
 import datetime
 from textwrap import dedent
 
-from python_utils import cd_vrfy, mkdir_vrfy, rm_vrfy, check_var_valid_value,\
+from python_utils import cd_vrfy, mkdir_vrfy, rm_vrfy, cp_vrfy, check_var_valid_value,\
                          lowercase,uppercase,check_for_preexist_dir_file,\
-                         list_to_str, type_to_str, \
+                         list_to_str, type_to_str, define_macos_utilities,\
                          import_vars, export_vars, get_env_var, print_info_msg,\
                          print_err_msg_exit, load_config_file, cfg_to_shell_str,\
-                         load_shell_config, load_ini_config, get_ini_value
+                         load_shell_config, load_ini_config, get_ini_value,\
+                         set_env_var
 
 from set_cycle_dates import set_cycle_dates
 from set_predef_grid_params import set_predef_grid_params
@@ -60,6 +62,9 @@ def setup():
     #
     EXPT_DEFAULT_CONFIG_FN="config_defaults.sh"
     cfg_d = load_config_file(os.path.join(ushdir,EXPT_DEFAULT_CONFIG_FN))
+    for k,v in cfg_d.items():
+        print(f'{k}={v}')
+
     import_vars(dictionary=cfg_d)
     #
     #-----------------------------------------------------------------------
@@ -2237,3 +2242,26 @@ def setup():
 if __name__ == "__main__":
     setup()
 
+#
+#-----------------------------------------------------------------------
+#
+# Unit test with config.community config file.
+#
+#-----------------------------------------------------------------------
+#
+class Testing(unittest.TestCase):
+    def test_setup(self):
+        setup()
+    def setUp(self):
+        define_macos_utilities();
+        set_env_var('DEBUG',True)
+        set_env_var('VERBOSE',True)
+        USHDIR = os.path.dirname(os.path.abspath(__file__))
+        CONFIG = os.path.join(USHDIR,'config.sh')
+        cp_vrfy(os.path.join(USHDIR,'config.community.sh'), CONFIG)
+        #append expt directory at the end
+        settings = {
+            'EXPT_BASEDIR': os.path.join(USHDIR,"test_data")
+        }
+        with open(CONFIG,'a') as f:
+            f.write(cfg_to_shell_str(settings))
