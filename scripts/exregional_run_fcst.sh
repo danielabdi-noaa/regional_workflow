@@ -505,6 +505,7 @@ PREP_STEP
 eval ${RUN_CMD_FCST} ${FV3_EXEC_FP} ${REDIRECT_OUT_ERR} || print_err_msg_exit "\
 Call to executable to run FV3-LAM forecast returned with nonzero exit
 code."
+POST_STEP
 #
 #-----------------------------------------------------------------------
 #
