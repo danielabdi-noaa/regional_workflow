@@ -862,7 +862,6 @@ def setup():
 
     global OPSROOT, COMROOT, PACKAGEROOT, DATAROOT, DCOMROOT, DBNROOT
     global SENDECF, SENDDBN, SENDDBN_NTC, SENDCOM, SENDWEB
-    global module_ver, extmodel_ver
     global KEEPDATA, MAILTO, MAILCC
 
     if RUN_ENVIR == "nco":
@@ -913,8 +912,6 @@ def setup():
         SENDDBN_NTC = False
         SENDCOM = False
         SENDWEB = False
-        module_ver = "8.5.2"
-        extmodel_ver = "00"
         KEEPDATA = True
         MAILTO = None
         MAILCC = None
@@ -2137,8 +2134,6 @@ def setup():
         "SENDDBN_NTC": SENDDBN_NTC,
         "SENDCOM": SENDCOM,
         "SENDWEB": SENDWEB,
-        "module_ver": module_ver,
-        "extmodel_ver": extmodel_ver,
         "KEEPDATA": KEEPDATA,
         "MAILTO": MAILTO,
         "MAILCC": MAILCC,
