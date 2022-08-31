@@ -864,6 +864,7 @@ def setup():
     global SENDECF, SENDDBN, SENDDBN_NTC, SENDCOM, SENDWEB
     global KEEPDATA, MAILTO, MAILCC
 
+    # Main directory locations
     if RUN_ENVIR == "nco":
 
         try:
@@ -879,7 +880,6 @@ def setup():
         COMOUT_BASEDIR = os.path.join(COMROOT, NET, model_ver)
 
         LOGDIR = os.path.join(COMROOT,"output", "logs")
-        FIXrrfs = os.path.join(HOMErrfs, "fix")
 
     else:
 
@@ -892,11 +892,6 @@ def setup():
         DCOMROOT = EXPTDIR
 
         LOGDIR = os.path.join(EXPTDIR, "log")
-        FIXrrfs = EXPTDIR
-
-    FIXam = os.path.join(FIXrrfs, "fix_am")
-    FIXclim = os.path.join(FIXrrfs, "fix_clim")
-    FIXlam = os.path.join(FIXrrfs, "fix_lam")
 
     try:
         DBNROOT
@@ -1255,6 +1250,16 @@ def setup():
         if RUN_TASK_VX_ENSGRID:
             RUN_TASK_VX_ENSGRID = False
             print_info_msg("""Turning off task RUN_TASK_VX_ENSGRID""")
+
+    # Fix file location
+    if RUN_TASK_MAKE_GRID:
+        FIXrrfs = EXPTDIR
+    else:
+        FIXrrfs = os.path.join(HOMErrfs, "fix")
+
+    FIXam = os.path.join(FIXrrfs, "fix_am")
+    FIXclim = os.path.join(FIXrrfs, "fix_clim")
+    FIXlam = os.path.join(FIXrrfs, "fix_lam")
 
     #
     # -----------------------------------------------------------------------
