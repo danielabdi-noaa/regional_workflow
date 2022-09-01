@@ -879,7 +879,7 @@ def setup():
         COMIN_BASEDIR = os.path.join(COMROOT, NET, model_ver)
         COMOUT_BASEDIR = os.path.join(COMROOT, NET, model_ver)
 
-        LOGDIR = os.path.join(COMROOT,"output", "logs")
+        LOGDIR = os.path.join(COMROOT,"output")
 
     else:
 
@@ -1776,7 +1776,6 @@ def setup():
         "SFC_CLIMO_INPUT_DIR": SFC_CLIMO_INPUT_DIR,
         "TOPO_DIR": TOPO_DIR,
         "EXPTDIR": EXPTDIR,
-        "LOGDIR": LOGDIR,
         "GRID_DIR": GRID_DIR,
         "OROG_DIR": OROG_DIR,
         "SFC_CLIMO_DIR": SFC_CLIMO_DIR,
